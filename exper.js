@@ -17,9 +17,19 @@ var nextGreaterElement = function(nums, nums2) {
     for( var i = 0; i < nums.length; i++ ){
         var compare = nums2.indexOf(nums[i]) + 1
         console.log(compare, " compare", " nums[i]:", nums[i], "value compared ", nums2[compare + 1])
-        if(nums[i] < nums2[compare]){
-            result.push(nums2[compare])
-        }else {
+        if(compare){
+            recurs(compare, nums, nums2)
+                function recurs(compare, nums, nums2){
+                        if(nums[i] < nums2[compare]){
+                            result.push(nums2[compare])
+                        }else if(nums[i] < nums2[compare]){
+                            compare++;
+                            recurs(compare, nums, nums2)
+                        }else {
+                            result.push(-1)
+                        }
+                    }
+        }else{
             result.push(-1)
         }
     }
