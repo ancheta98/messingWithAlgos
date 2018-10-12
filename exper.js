@@ -23,7 +23,7 @@ var nextGreaterElement = function(nums, nums2) {
             result.push(-1)
         }
     }
-    console.log(result) ;
+    return result;
 };
 
 var nums1 = [4,1,2]
