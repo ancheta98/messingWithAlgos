@@ -12,11 +12,8 @@ var nextGreaterElement = function(nums, nums2) {
     //indexof to find place of index in second arr
     //for each index ran through for loop compare all next elements to see if they are greater than
     var result = [];
-    console.log(nums)
-    console.log(nums2)
     for( var i = 0; i < nums.length; i++ ){
         var compare = nums2.indexOf(nums[i]) + 1
-        console.log(compare, " compare", " nums[i]:", nums[i], "value compared ", nums2[compare + 1])
         if(compare){
             recurs(compare, nums, nums2)
                 function recurs(compare, nums, nums2){
