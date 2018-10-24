@@ -10,16 +10,29 @@
 // if i == arr.length-1 , reset i to next
 // while i != index of point of checking continue running function to
 // chack values
+//how to check that I've circled back to the same index that I started
 
 var nextGreaterElementII = function(nums) {
   var result = [];
-  var next = 0;
-    for (var i = 0; i < nums.length; i++) {
-        //for every elem check the next values
-        function checkVals() {
-            
+  var next;
+  var count = 1;
+  //when count is equal to the length then I know that I've made a circle
+  //count increments everytime i moves
+  for (var i = 0; i < nums.length; i++) {
+    //for every elem check the next values
+    checkVals(next, count);
+    function checkVals(next, count) {
+      count++;
+      if (count != nums.length) {
+        if (i == nums.length - 1) {
+          //if at the end of the array, set i to zero
+          next = 0;
+        } else if (i != nums.length || i != index) {
+          next = i + 1;
         }
+      }
     }
+  }
 };
 
 var nums1 = [1, 2, 1];
