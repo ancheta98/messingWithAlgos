@@ -21,15 +21,25 @@ var nextGreaterElementII = function(nums) {
   for (var i = 0; i < nums.length; i++) {
     //for every elem check the next values
     checkVals(next, count);
-    function checkVals(next, count) {
+    function checkVals(next, count, nums) {
       count++;
       if (count != nums.length) {
         if (i == nums.length - 1) {
           //if at the end of the array, set i to zero
           next = 0;
-        } else if (i != nums.length || i != index) {
-          next = i + 1;
+        } else {
+            next = i + 1;
         }
+        if(nums[i] < nums[next]){
+            result.push(nums[next])
+        }else if(nums[i] < nums2[next]){
+            next++;
+            checkVals(next, count, nums)
+        }else {
+            result.push(-1)
+        }
+      }else{
+          return result
       }
     }
   }
