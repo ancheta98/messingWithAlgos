@@ -13,8 +13,8 @@
 //return num
 function addDigits(num) {
     let max = 0;
-let newDigit;
-    if (num > 10) {
+    let newDigit;
+    if (num >= 10) {
         num = num.toString()
         num = num.split("")
         for (let i = 0; i < num.length; i++) {
@@ -25,9 +25,9 @@ let newDigit;
     } else {
         return num;
     }
-    if( max >10 ){
-        rAdd(max)
-    }else{
+    if (max >= 10) {
+        addDigits(max)
+    } else {
         console.log(max, "return")
         return max;
     }
@@ -35,4 +35,4 @@ let newDigit;
 
 
 
-addDigits(834)
+addDigits(156)
