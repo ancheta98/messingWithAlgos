@@ -3,20 +3,13 @@
 // Explanation: The process is like: 3 + 8 = 11, 1 + 1 = 2. 
 //              Since 2 has only one digit, return it.
 
-// if number > 10
-// number to string then split("")
-// then parse int on each split digit and add them
-
-//repeat -- use recursion
-
-//else 
-//return num
 const addDigits = (num) => {
     let max = 0;
     let newDigit;
+    //checks if num is not greater than 10
+    //will split it into individual numbers and add them together producing max
     if (num >= 10) {
-        num = num.toString()
-        num = num.split("")
+        num = num.toString().split("")
         for (let i = 0; i < num.length; i++) {
             newDigit = parseInt(num[i])
             max += newDigit
@@ -24,11 +17,8 @@ const addDigits = (num) => {
     } else {
         return num;
     }
-    if (max >= 10) {
-        return addDigits(max)
-    } else {
-        return max;
-    }
+    //if max is greater than 9 then it will run the function again to split the individual numbers etc.
+    return (max >= 10 ? addDigits(max) : max)
 }
 
 
