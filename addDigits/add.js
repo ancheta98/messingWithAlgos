@@ -11,7 +11,7 @@
 
 //else 
 //return num
-function addDigits(num) {
+const addDigits = (num) => {
     let max = 0;
     let newDigit;
     if (num >= 10) {
@@ -21,18 +21,16 @@ function addDigits(num) {
             newDigit = parseInt(num[i])
             max += newDigit
         }
-        console.log(max, "max")
     } else {
         return num;
     }
     if (max >= 10) {
-        addDigits(max)
+        return addDigits(max)
     } else {
-        console.log(max, "return")
         return max;
     }
 }
 
 
 
-addDigits(156)
+console.log(addDigits(38))
