@@ -23,4 +23,11 @@ const addDigits = (num) => {
 
 
 
-console.log(addDigits(38))
+// console.log(addDigits(38))
+//O(1) time complexity 
+// var addDigits2 = function(num) {
+//     if(num < 10){
+//       return num
+//     }
+//     return num % 9 + (num % 9 === 0 ? 9: 0) 
+//   };
