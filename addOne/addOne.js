@@ -12,12 +12,8 @@
 
 //with iteration
 function addOneIterable(num) {
-  num = num
-    .toString()
-    .split("")
-    .map(x => parseInt(x) + 1)
-    .join("");
-  return num;
+  //omg it's a one liner!
+  return num.toString().split("").map(x => parseInt(x) + 1).join("");
 }
 
 addOneIterable(998);
@@ -52,6 +48,8 @@ function addOne(num) {
   }
   return parseInt(newNum)
 }
+//It will return backwards since working off of the remainder
+// but it does technically add one to each digit sooooo ¯\_( ͡° ͜ʖ ͡°)_/¯
 addOne(998)
 addOne(1212221);
 addOne(5)
