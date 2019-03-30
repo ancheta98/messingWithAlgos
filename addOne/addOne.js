@@ -13,6 +13,7 @@
 //with iteration
 function addOneIterable(num) {
   //omg it's a one liner!
+  console.log(num.toString().split("").map(x => parseInt(x) + 1).join(""))
   return num.toString().split("").map(x => parseInt(x) + 1).join("");
 }
 
